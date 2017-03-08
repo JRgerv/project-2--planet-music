@@ -1,0 +1,13 @@
+<h2>#<%= tag.name %></h2>
+
+<h3>Users tagged with <%= tag.name </h3>
+
+<% tag.posts.forEach(function(p){ %>
+  <div>
+    <p>
+      <a href="/posts/<%= p.id %>">
+        <%= p.title %>
+      </a>
+    </p>
+  </div>
+<% }); %>
