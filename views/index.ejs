@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-sm-8">
-    <h1>Latest Posts from BlogPulse</h1>
+    <h1>SHOW ME WHAT YOU GOT</h1>
 
-    <% posts.forEach(function(post) { %>
+    <% posts.forEach(function(user) { %>
       <div class="well">
         <h2>
-          <a href="/posts/<%= post.id %>"><%= post.title %></a>
-          <small>by <%= post.author.getFullName() %></small>
+          <a href="/users/<%= user.id %>"><%= user.firstname %><%= user.lastname %></a>
+          <small>From <%= user.location %></small>
         </h2>
 
       </div>
@@ -15,7 +15,6 @@
   </div>
   <div class="col-sm-4">
     <h2>About</h2>
-    <p>BlogPulse is an up-and-coming player in the global media market,
-    providing user-generated content across all topics.</p>
+    <p>Planet Music info goes here</p>
   </div>
 </div>

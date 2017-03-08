@@ -52,3 +52,17 @@ router.get('/logout', function(req, res){
   req.flash("You logged out :("); //Logout and go to login page
   res.redirect('/auth/login');
 });
+
+router.get('/facebook',passport.authenticate('facebook', { //facebook login
+  scope: ['public_profile', 'email']
+}));
+
+router.get('/callback/facebook', passport.authenticate('facebook', {
+  successRedirect: '/profile',
+  successFlash: 'You are now logged in via Facebook',
+  failureRedirect:'/auth/login',
+  failureFlash: 'Facebook credentials not recognized'
+}));
+
+//export
+module.exports = router;

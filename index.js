@@ -30,13 +30,18 @@ app.use(function(req, res, next){ //custom middleware
 });
 
 //routes
+app.get("/", function(req,res){
+  res.render("index");
+});
 
-
+app.get("/profile" function(req,res){
+  res.render("profile");
+});
 
 
 
 //controllers
-
+app.use('/auth', require('./controllers/auth'));
 
 
 
